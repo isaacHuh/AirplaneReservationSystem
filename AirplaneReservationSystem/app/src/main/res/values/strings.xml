@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">AirplaneReservationSystem</string>
+    <string name="UsernameInput">Enter Username</string>
+    <string name="PasswordInput">Enter Password</string>
+    <string name="AirlineName">Otter Airways</string>
+    <string name="CreateAccount">Create Account</string>
+    <string name="ReserveSeat">Reserve Seat</string>
+    <string name="CancelReservation">Cancel Reservation</string>
+    <string name="ManageSystem">Manage System</string>
+    <string name="CreateFlight">Create Flight</string>
+
+    <string name="EnterFlightNum">Enter Flight Number</string>
+    <string name="EnterDeparture">Enter Departure</string>
+    <string name="EnterArrival">Enter Arrival</string>
+    <string name="EnterDepartureTime">Enter Departure Time</string>
+    <string name="EnterCapacity">Enter Capacity</string>
+    <string name="EnterPrice">Enter Price</string>
+</resources>
