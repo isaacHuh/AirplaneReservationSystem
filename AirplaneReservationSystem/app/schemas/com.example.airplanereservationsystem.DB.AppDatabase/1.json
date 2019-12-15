@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "bb046fcff7499313983d94266feab196",
+    "identityHash": "d27af428cca2144c1bf07802d6746a01",
     "entities": [
       {
         "tableName": "accountlog",
@@ -141,11 +141,91 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "transactionlog",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mTransactionNum` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mUsername` TEXT, `mReservationNum` INTEGER NOT NULL, `mFlightNum` TEXT, `mDeparture` TEXT, `mArrival` TEXT, `mDepartureTime` TEXT, `mNumTickets` INTEGER NOT NULL, `mType` TEXT, `mTotalAmount` REAL, `mDate` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "mTransactionNum",
+            "columnName": "mTransactionNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mUsername",
+            "columnName": "mUsername",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mReservationNum",
+            "columnName": "mReservationNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mFlightNum",
+            "columnName": "mFlightNum",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mDeparture",
+            "columnName": "mDeparture",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mArrival",
+            "columnName": "mArrival",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mDepartureTime",
+            "columnName": "mDepartureTime",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mNumTickets",
+            "columnName": "mNumTickets",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mType",
+            "columnName": "mType",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mTotalAmount",
+            "columnName": "mTotalAmount",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mDate",
+            "columnName": "mDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mTransactionNum"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"bb046fcff7499313983d94266feab196\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"d27af428cca2144c1bf07802d6746a01\")"
     ]
   }
 }

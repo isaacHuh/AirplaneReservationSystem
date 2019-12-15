@@ -25,6 +25,9 @@ public interface FlightLogDAO {
     @Query("SELECT * FROM " + AppDatabase.FLIGHTLOG_TABLE + " WHERE mFlightNum = :flightNum")
     FlightLog getFlightLogByFlightNum(String flightNum);
 
+    @Query("SELECT * FROM " + AppDatabase.FLIGHTLOG_TABLE + " WHERE (mDeparture LIKE :departure) AND (mArrival LIKE :arrival) AND (mCapacity >= :seats)")
+    List<FlightLog> getFlightsByInputs(String departure, String arrival, int seats);
+
     @Query("SELECT * FROM " + AppDatabase.FLIGHTLOG_TABLE)
     List<FlightLog> getAllFlightLogs();
 

@@ -100,15 +100,13 @@ public class ReservationLog {
 
     @Override
     public String toString() {
-        return "ReservationLog{" +
-                "mReservationNum=" + mReservationNum +
-                ", mUsername='" + mUsername + '\'' +
-                ", mFlightNum='" + mFlightNum + '\'' +
-                ", mDeparture='" + mDeparture + '\'' +
-                ", mArrival='" + mArrival + '\'' +
-                ", mNumTickets=" + mNumTickets +
-                ", mCost=" + mCost +
-                ", mDate=" + mDate +
-                '}';
+        return "\nReservation Number: " + mReservationNum + "\n" +
+                "Username: " + mUsername + '\n' +
+                "Flight Number: " + mFlightNum + '\n' +
+                "Departure: " + mDeparture + '\n' +
+                "Arrival: " + mArrival + '\n' +
+                "Number of Tickets: " + mNumTickets + "\n" +
+                "Total Cost: " + mCost + "\n" +
+                "Date: " + mDate + "\n";
     }
 }

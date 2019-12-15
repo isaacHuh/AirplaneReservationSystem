@@ -31,6 +31,20 @@ public class MainScreen extends AppCompatActivity {
             }
         });
 
+        ReserveSeatBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                openSearchFlight();
+            }
+        });
+
+        CancelReservationBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                openCancelReservation();
+            }
+        });
+
         ManageSystemBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -44,8 +58,18 @@ public class MainScreen extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void openSearchFlight(){
+        Intent intent = new Intent(this, SearchFlights.class);
+        startActivity(intent);
+    }
+
+    private void openCancelReservation(){
+        Intent intent = new Intent(this, LoginCancelReservation.class);
+        startActivity(intent);
+    }
+
     private void openManageSystem(){
-        Intent intent = new Intent(this, FlightDisplay.class);
+        Intent intent = new Intent(this, LoginManageSystem.class);
         startActivity(intent);
     }
 }

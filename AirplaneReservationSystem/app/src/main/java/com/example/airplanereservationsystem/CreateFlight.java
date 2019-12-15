@@ -1,15 +1,15 @@
 package com.example.airplanereservationsystem;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.airplanereservationsystem.DB.AppDatabase;
@@ -41,8 +41,8 @@ public class CreateFlight extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mFlightNum = findViewById(R.id.FlightNumText);
-        mDeparture = findViewById(R.id.DepartureText);
-        mArrival = findViewById(R.id.ArrivalText);
+        mDeparture = findViewById(R.id.DepartureSearchText);
+        mArrival = findViewById(R.id.ArrivalSearchText);
         mDepartureTime = findViewById(R.id.DepartureTimeText);
         mCapacity = findViewById(R.id.CapacityText);
         mPrice = findViewById(R.id.PriceText);
@@ -57,6 +57,7 @@ public class CreateFlight extends AppCompatActivity {
         mSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 createFlight();
                 if(valid){
                     openFlightDisplay();
@@ -93,9 +94,11 @@ public class CreateFlight extends AppCompatActivity {
 
             if (flight == null) {
                 if(!departure.isEmpty() && !arrival.isEmpty() && !departureTime.isEmpty() && capacity != -1 && price != 1.0) {
+
                     FlightLog flightLog = new FlightLog(flightNum, departure, arrival, departureTime, capacity, price);
                     mFlightLogDAO.insert(flightLog);
                     valid = true;
+
                 }else{
                     message = "Invalid Inputs.";
                 }
@@ -108,6 +111,7 @@ public class CreateFlight extends AppCompatActivity {
 
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
+
 }
 
     /*

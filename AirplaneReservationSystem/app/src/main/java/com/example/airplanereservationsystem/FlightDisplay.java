@@ -53,10 +53,9 @@ public class FlightDisplay extends AppCompatActivity {
         lstFlights.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String selectedFromList = (lstFlights.getItemAtPosition(i).toString());
-                //kinda shit line
-                String flightNum = selectedFromList.substring(selectedFromList.indexOf(':')+2,selectedFromList.indexOf(':')+2+selectedFromList.substring(selectedFromList.indexOf(':')+2).indexOf("\n"));
-                //flightNum.replaceAll(" ", "");
+
+                FlightLog flightLog = mFlightLogs.get(i);
+                String flightNum = flightLog.getFlightNum();
 
                 flightNumDeleteSelected = flightNum;
                 Log.i("tag", ".."+flightNum+"..");

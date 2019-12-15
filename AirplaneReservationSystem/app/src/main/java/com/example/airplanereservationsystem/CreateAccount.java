@@ -1,10 +1,12 @@
 package com.example.airplanereservationsystem;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 import androidx.room.migration.Migration;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +18,7 @@ import android.widget.Toast;
 import com.example.airplanereservationsystem.DB.AccountLogDAO;
 import com.example.airplanereservationsystem.DB.AppDatabase;
 import com.example.airplanereservationsystem.DB.ReservationLogDAO;
+import com.example.airplanereservationsystem.DB.TransactionLogDAO;
 
 import java.util.HashSet;
 import java.util.List;
@@ -27,6 +30,8 @@ public class CreateAccount extends AppCompatActivity {
 
     AccountLogDAO mAccountLogDAO;
     List<AccountLog> mAccountLogs;
+
+    TransactionLogDAO mTransactionLogDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +49,11 @@ public class CreateAccount extends AppCompatActivity {
                 .allowMainThreadQueries()
                 .build()
                 .getAccountLogDOA();
+
+        mTransactionLogDAO = Room.databaseBuilder(this, AppDatabase.class, AppDatabase.DBNAME)
+                .allowMainThreadQueries()
+                .build()
+                .getTransactionLogDOA();
 
         //mAccountLogDAO.deleteAll();
         mSubmit.setOnClickListener(new View.OnClickListener(){
@@ -80,6 +90,10 @@ public class CreateAccount extends AppCompatActivity {
             if(validateInput(username) && validateInput(password) && !username.equals("admin2")) {
                 AccountLog accountLog = new AccountLog(username, password);
                 mAccountLogDAO.insert(accountLog);
+
+                TransactionLog transactionLog = new TransactionLog("Create Account", username,"","","","",0,0,0.0);
+                mTransactionLogDAO.insert(transactionLog);
+
                 valid = true;
             }else{
                 message = "Invalid Username/Password.";
@@ -114,31 +128,5 @@ public class CreateAccount extends AppCompatActivity {
         }else{
             return false;
         }
-    }
-    private void displayUserInfoTest(){
-        Log.i("Username: ", mUsername.getText().toString());
-        Log.i("Password: ", mPassword.getText().toString());
-        /*
-        if(account.getPassword().equals(password)){
-            Log.i("addToDataBase: ", "password matches\n");
-        }else{
-            Log.i("addToDataBase: ", "password does not match\n");
-        }*/
-    }
-    private void test(){
-        mAccountLogs = mAccountLogDAO.getAllAccountLogs();
-
-        if(!mAccountLogs.isEmpty()){
-            StringBuilder stringBuilder = new StringBuilder();
-
-            for(AccountLog accountLog : mAccountLogs){
-                stringBuilder.append(accountLog.toString());
-            }
-
-            Log.i("account:",stringBuilder.toString());
-        }else{
-            Log.i("account:","none");
-        }
-
     }
 }

@@ -15,4 +15,10 @@
     <string name="EnterDepartureTime">Enter Departure Time</string>
     <string name="EnterCapacity">Enter Capacity</string>
     <string name="EnterPrice">Enter Price</string>
+    <string name="EnterSeats">Enter Number Of Seats</string>
+    <string name="Login">Login</string>
+
+    <string name="ViewTransactions">View Transactions</string>
+    <string name="ViewFlights">View Flights</string>
+
 </resources>

@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0052C4"
-    tools:context=".FlightDisplay">
+    tools:context=".ReserveSeat">
 
-    <ListView
-        android:id="@+id/FlightsList"
+    <TextView
+        android:id="@+id/FlightTextView"
         android:layout_width="0dp"
-        android:layout_height="570dp"
-        android:background="#FFFFFF"
+        android:layout_height="300dp"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -19,22 +20,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/AddFAButton"
+    <Button
+        android:id="@+id/MakeReservationButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:foregroundTint="#FFFFFF"
-        android:tint="#FFFFFF"
-        android:tintMode="src_atop"
-        app:backgroundTint="#2979FF"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#3480EB"
+        android:fontFamily="@font/josefin_sans_bold"
+        android:text="@string/ReserveSeat"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/FlightsList"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        app:layout_constraintTop_toBottomOf="@+id/FlightTextView"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

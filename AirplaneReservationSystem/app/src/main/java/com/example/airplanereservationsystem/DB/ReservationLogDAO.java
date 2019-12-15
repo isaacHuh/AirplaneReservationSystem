@@ -22,6 +22,9 @@ public interface ReservationLogDAO {
     @Delete
     void delete(ReservationLog reservationLog);
 
+    @Query("SELECT * FROM " + AppDatabase.RESERVATIONLOG_TABLE + " WHERE mUsername = :username")
+    List<ReservationLog> getUserReservationLogs(String username);
+
     @Query("SELECT * FROM " + AppDatabase.RESERVATIONLOG_TABLE)
     List<ReservationLog> getAllReservationLogs();
 

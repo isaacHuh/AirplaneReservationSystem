@@ -9,12 +9,39 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FlightDisplay"
+        <activity android:name=".CancelReservation"
+            android:parentActivityName=".CancelReservationDisplay"></activity>
+        <activity android:name=".CancelReservationDisplay"
             android:parentActivityName=".MainScreen"/>
-        <activity android:name=".CreateFlight"
-            android:parentActivityName=".FlightDisplay"/>
-        <activity android:name=".CreateAccount"
+        <activity android:name=".LoginCancelReservation"
             android:parentActivityName=".MainScreen"/>
+        <activity
+            android:name=".LoginManageSystem"
+            android:parentActivityName=".MainScreen" />
+        <activity
+            android:name=".ManageSystem"
+            android:parentActivityName=".MainScreen" />
+        <activity
+            android:name=".TransactionDisplay"
+            android:parentActivityName=".ManageSystem" />
+        <activity
+            android:name=".LoginReserveSeat"
+            android:parentActivityName=".SearchFlights" />
+        <activity
+            android:name=".ReserveSeat"
+            android:parentActivityName=".SearchFlights" />
+        <activity
+            android:name=".SearchFlights"
+            android:parentActivityName=".MainScreen" />
+        <activity
+            android:name=".FlightDisplay"
+            android:parentActivityName=".ManageSystem" />
+        <activity
+            android:name=".CreateFlight"
+            android:parentActivityName=".FlightDisplay" />
+        <activity
+            android:name=".CreateAccount"
+            android:parentActivityName=".MainScreen" />
         <activity android:name=".MainScreen" />
         <activity android:name=".MainActivity">
             <intent-filter>

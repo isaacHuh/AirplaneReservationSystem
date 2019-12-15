@@ -11,8 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:backgroundTint="#3480EB"
         android:fontFamily="@font/josefin_sans_bold"
         android:text="@string/CreateFlight"
+        android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +36,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/DepartureText"
+        android:id="@+id/DepartureSearchText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -46,7 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/FlightNumText" />
 
     <EditText
-        android:id="@+id/ArrivalText"
+        android:id="@+id/ArrivalSearchText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -55,7 +57,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DepartureText" />
+        app:layout_constraintTop_toBottomOf="@+id/DepartureSearchText" />
 
     <EditText
         android:id="@+id/DepartureTimeText"
@@ -67,7 +69,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ArrivalText" />
+        app:layout_constraintTop_toBottomOf="@+id/ArrivalSearchText" />
 
     <EditText
         android:id="@+id/CapacityText"
